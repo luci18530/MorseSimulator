@@ -5,12 +5,12 @@
 #include <locale.h>
 #include <string.h>
 int FREQ; //FREQUENCIA DO BEEP
-#define DUR 75 // DURA«√O DO BEEP CURTO (PONTO) EM MILISEGUNDOS
+#define DUR 75 // DURA√á√ÉO DO BEEP CURTO (PONTO) EM MILISEGUNDOS
 #define TAMFRASE 512 // TAMANHO MAXIMO DA FRASE
 int DURSLEEP_INTRACHAR = DUR; // TEMPO DE DELAY ENTRE O BEEP CURTO E BEEP LONGO
 int DURSLEEP_ENTRECHAR = 3*DUR; // TEMPO DE DELAY ENTRE CADA CARACTERE
 int DURSLEEP_ENTREPALAVRA = 7*DUR; // TEMPO DE DELAY ENTRE CADA PALAVRA
-int opc; // SELETOR DE OP«√O
+int opc; // SELETOR DE OP√á√ÉO
 
 // DIT e DAT
 void ponto (void){
@@ -27,7 +27,7 @@ void linha (void){
  		printf("-");}
 }
 
-// ESPA«OS
+// ESPA√áOS
 void INTRACHAR (void){
     Sleep(DURSLEEP_INTRACHAR); // DELAY ENTRE O BEEP CURTO E BEEP LONGO
 }
@@ -459,33 +459,33 @@ Not in ITU-R recommendation	-.-.--
 / Slash	-..-.*/
 }
 
-// AINDA A SER ADICIONADO OS CARACTERES DE PONTUA«√O!!
+// AINDA A SER ADICIONADO OS CARACTERES DE PONTUA√á√ÉO!!
 
 int main(void) {
   setlocale(LC_ALL, "Portuguese"); // PERMITIR CARACTERES ACENTUADOS
   
-  int cont_limite_opc1 = 0; // CONTADOR PARA SAIR DA OP«√O 1 
-  char caractere; // PARA A OP«√O 1
-  char frase[TAMFRASE]; // PARA A OP«√O 3
+  int cont_limite_opc1 = 0; // CONTADOR PARA SAIR DA OP√á√ÉO 1 
+  char caractere; // PARA A OP√á√ÉO 1
+  char frase[TAMFRASE]; // PARA A OP√á√ÉO 3
   int leitorfrase = 0; // leitor da frase
-  printf("SISTEMA TELEGRAFO Vers„o Alpha 0.6.1\n-----------------------------------------\n");
-  printf("Digite o modo de como vocÍ quer trabalhar\n(1)- Caractere para codigo sonoro\n(2)- Caractere para codigo escrito\n(3)- String para codigo sonoro\n(4)- String para codigo escrito\n(5)- Codigo para string\n(6)- Sair\n-----------------------------------------\n");
-  printf("Digite a opÁ„o: "); // SELECIONAR A OP«√O
+  printf("SISTEMA TELEGRAFO Vers√£o Alpha 0.6.1\n-----------------------------------------\n");
+  printf("Digite o modo de como voc√™ quer trabalhar\n(1)- Caractere para codigo sonoro\n(2)- Caractere para codigo escrito\n(3)- String para codigo sonoro\n(4)- String para codigo escrito\n(5)- Codigo para string\n(6)- Sair\n-----------------------------------------\n");
+  printf("Digite a op√ß√£o: "); // SELECIONAR A OP√á√ÉO
   scanf("%i", &opc);
   printf("-----------------------------------------\n");
   
   if (opc == 1 || opc == 3){
-    printf("Determine a frequÍncia da onda do beep em Hertz: "); // SELECIONAR A FREQUENCIA 
+    printf("Determine a frequ√™ncia da onda do beep em Hertz: "); // SELECIONAR A FREQUENCIA 
     scanf("%i", &FREQ);
     printf("-----------------------------------------\n");
     
     if (opc == 1){
-		// OP«√O 1 = CARACTERE PARA CODIGO SONORO
+		// OP√á√ÉO 1 = CARACTERE PARA CODIGO SONORO
     	while(1){
-    		printf("Digite a caractere (pressione 0 trÍs vezes para sair): ");
+    		printf("Digite a caractere (pressione 0 tr√™s vezes para sair): ");
     		scanf(" %c", &caractere);
-    		if (caractere  == '0'){cont_limite_opc1++;} // CONTADOR PARA SAIR DA OP«√O 1
-	  		if (cont_limite_opc1>=3){break;} // FUTURAMENTE USAR GOTO PARA VOLTAR A SELE«√O DE OP«√O
+    		if (caractere  == '0'){cont_limite_opc1++;} // CONTADOR PARA SAIR DA OP√á√ÉO 1
+	  		if (cont_limite_opc1>=3){break;} // FUTURAMENTE USAR GOTO PARA VOLTAR A SELE√á√ÉO DE OP√á√ÉO
     		codigo(caractere);
  	}
 	}
@@ -496,14 +496,14 @@ int main(void) {
 	}
   
   	if (opc == 3) {
-  		// OP«√O 3 - STRING PARA CODIGO SONORO
+  		// OP√á√ÉO 3 - STRING PARA CODIGO SONORO
   		printf("Digite as frases (pressione 000 para sair): ");	
 		while(1){
 			fgets(frase, TAMFRASE, stdin);
   			if (frase[0] == '0' && frase[1] == '0' && frase[2] == '0'){break;}
   			else {
 			  for (leitorfrase = 0; frase[leitorfrase] != '\0'; leitorfrase++){
-  				codigo(frase[leitorfrase]); // A CADA CARACTERE DA STRING SERA USADO A FUN«√O QUE GERA OS BEEPS AT… ENCONTRAR O '\0'
+  				codigo(frase[leitorfrase]); // A CADA CARACTERE DA STRING SERA USADO A FUN√á√ÉO QUE GERA OS BEEPS AT√â ENCONTRAR O '\0'
 			  }
   	}
 	}
@@ -511,17 +511,17 @@ int main(void) {
 	
 	if (opc == 2){
 		while(1){
-    		printf("\nDigite a caractere (pressione 0 trÍs vezes para sair): ");
+    		printf("\nDigite a caractere (pressione 0 tr√™s vezes para sair): ");
     		scanf(" %c", &caractere);
-    		if (caractere  == '0'){cont_limite_opc1++;} // CONTADOR PARA SAIR DA OP«√O 2
-	  		if (cont_limite_opc1>=3){break;} // FUTURAMENTE USAR GOTO PARA VOLTAR A SELE«√O DE OP«√O
+    		if (caractere  == '0'){cont_limite_opc1++;} // CONTADOR PARA SAIR DA OP√á√ÉO 2
+	  		if (cont_limite_opc1>=3){break;} // FUTURAMENTE USAR GOTO PARA VOLTAR A SELE√á√ÉO DE OP√á√ÉO
     		codigo(caractere);
  	}
 }
 	if (opc == 6){
 		printf("OBRIGADO POR USAR NOSSO PROGRAMA!\n");
 		printf("-----------------------------------------\n");
-		printf("Feito por:\n1- Luciano Pereira de Oliveira Filho\n2- Lucas Isaac Pissaia da Silva \n3- Erika Fernanda Andrade Bezerra\n4- Anthony Gabriel Lopes da Silva\n5- Samuel Torres LourenÁo\n\nTURINHO - CIENCIA DA COMPUTA«√O 2019.1\n");
+		printf("Feito por:\n1- Luciano Pereira de Oliveira Filho\n2- Lucas Isaac Pissaia da Silva \n3- Erika Fernanda Andrade Bezerra\n4- Anthony Gabriel Lopes da Silva\n5- Samuel Torres Louren√ßo\n\nTURINHO - CIENCIA DA COMPUTA√á√ÉO 2019.1\n");
 		printf("-----------------------------------------\n");
 		system("pause");
 		return 0;
@@ -532,10 +532,10 @@ int main(void) {
 	/* FALTA:
 		USO DO CLEAR SCREEN
 		FALAR COM MARITAN
-		DESENVOLVER A OP«√O 2,3,5
+		DESENVOLVER A OP√á√ÉO 2,3,5
 		APLICAR O DELAY ENTRE CARACTERES E FRASES
-		INCLUIR OS CARACTERES DE PONTUA«√O NA FUN«√O CODIGO
-		VER SE … POSSIVEL POR O CODIGO ESCRTIO NA FUN«√O CODIGO CASO A OP«√O SELECIONADA SEJA 2 OU 4
+		INCLUIR OS CARACTERES DE PONTUA√á√ÉO NA FUN√á√ÉO CODIGO
+		VER SE √â POSSIVEL POR O CODIGO ESCRTIO NA FUN√á√ÉO CODIGO CASO A OP√á√ÉO SELECIONADA SEJA 2 OU 4
 	
 	
 	 */
