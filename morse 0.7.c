@@ -5,7 +5,7 @@
 #include <locale.h>
 #include <string.h>
 int FREQ; //FREQUENCIA DO BEEP
-#define DUR 75 // DURAÇÃO DO BEEP CURTO (PONTO) EM MILISEGUNDOS
+#define DUR 70 // DURAÇÃO DO BEEP CURTO (PONTO) EM MILISEGUNDOS
 #define TAMFRASE 1024 // TAMANHO MAXIMO DA FRASE
 int DURSLEEP_INTRACHAR = DUR; // TEMPO DE DELAY ENTRE O BEEP CURTO E BEEP LONGO
 int DURSLEEP_ENTRECHAR = 2*DUR; // TEMPO DE DELAY ENTRE CADA CARACTERE
@@ -463,13 +463,14 @@ int main(void) {
   setlocale(LC_ALL, "Portuguese"); // PERMITIR CARACTERES ACENTUADOS
   
   int cont_limite_opc1 = 0; // CONTADOR PARA SAIR DA OPÇÃO 1 
+  int cont_limite_opc2 = 0; // CONTADOR PARA SAIR DA OPÇÃO 2 
   char caractere; // PARA A OPÇÃO 1
   char frase[TAMFRASE]; // PARA A OPÇÃO 3
   char codigoescrito[TAMFRASE]; // PARA A OPÇÃO 5
   int leitor = 0; // leitor da frase/codigo
   inicio:
   system("cls");
-  printf("SISTEMA TELEGRAFO Versão Alpha 0.7\n-----------------------------------------\n");
+  printf("SISTEMA TELEGRAFO Versão Alpha 0.7.1\n-----------------------------------------\n");
   printf("Digite o modo de como você quer trabalhar\n(1)- Caractere para codigo sonoro\n(2)- Caractere para codigo escrito\n(3)- String para codigo sonoro\n(4)- String para codigo escrito\n(5)- Codigo para string\n(6)- Sair\n-----------------------------------------\n");
   printf("Digite a opção: "); // SELECIONAR A OPÇÃO
   scanf("%i", &opc);
@@ -479,7 +480,7 @@ int main(void) {
     printf("Determine a frequência da onda do beep em Hertz: "); // SELECIONAR A FREQUENCIA 
     scanf("%i", &FREQ);
     printf("-----------------------------------------\n");
-    
+}
     if (opc == 1){
 		// OPÇÃO 1 - CARACTERE PARA CODIGO SONORO
     	while(1){
@@ -487,7 +488,11 @@ int main(void) {
     		printf("Digite a caractere (pressione 0 três vezes para sair): ");
     		scanf(" %c", &caractere);
     		if (caractere  == '0'){cont_limite_opc1++;} // CONTADOR PARA SAIR DA OPÇÃO 1
-	  		if (cont_limite_opc1>=3){goto inicio;} // FUTURAMENTE USAR GOTO PARA VOLTAR A SELEÇÃO DE OPÇÃO
+    		printf("\nDEBUG: %i \n", cont_limite_opc1);
+	  		if (cont_limite_opc1>=3){
+	  		  cont_limite_opc1 = 0;	
+			  goto inicio;
+			  } 
     		codigo(caractere);
  	}
 	}
@@ -508,7 +513,7 @@ int main(void) {
   	}
 	}
 	}
-}
+
 	
 	if (opc == 2){
 		// OPÇÃO 2 - CARACTERE PARA CODIGO ESCRITO
@@ -516,8 +521,12 @@ int main(void) {
 			system("cls");
     		printf("Digite o caractere (pressione 0 três vezes para sair): ");
     		scanf(" %c", &caractere);
-    		if (caractere  == '0'){cont_limite_opc1++;} // CONTADOR PARA SAIR DA OPÇÃO 2
-	  		if (cont_limite_opc1>=3){goto inicio;} // FUTURAMENTE USAR GOTO PARA VOLTAR A SELEÇÃO DE OPÇÃO
+    		if (caractere  == '0'){cont_limite_opc2++;} // CONTADOR PARA SAIR DA OPÇÃO 2
+	  		if (cont_limite_opc2>=3){
+	  		  cont_limite_opc2 = 0;	
+			  goto inicio;
+			  
+			  } 
     		codigo(caractere);
     		printf("\n");
     		system("pause");
@@ -542,7 +551,7 @@ if (opc == 4){
 }
 }
 
- 	if (opc = 5){
+ 	if (opc == 5){
 	// OPÇÃO 5 - CODIGO ESCRITO PARA STRING - NÃO SEI COMO FAÇO ISSO!!!!!!!!!!!
 	while (1){
 		marcador:
