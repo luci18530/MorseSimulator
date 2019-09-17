@@ -4,6 +4,7 @@
 #include <locale.h>
 #include <string.h>
 #include "codigos.h"
+#include "pch.h"
 
 int FREQ; //FREQUENCIA DO BEEP
 int DURSLEEP_INTRACHAR = DUR; // TEMPO DE DELAY ENTRE O BEEP CURTO E BEEP LONGO

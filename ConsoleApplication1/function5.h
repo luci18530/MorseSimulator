@@ -8,7 +8,9 @@
 /* Prototypes for the functions */
 /* Sums two ints */
 
-void codigo(caractere);
+
+char* convert(char *mword);
+char* parsemorse(char *phrase);
 
 
 #endif
