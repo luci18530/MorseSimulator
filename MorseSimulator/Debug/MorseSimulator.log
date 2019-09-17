@@ -1,0 +1,3 @@
+﻿  function5.c
+C:\Users\lipss\source\repos\MorseSimulator\MorseSimulator\function5.c(45,33): warning C4101:  'real': variável local não referenciada
+  MorseSimulator.vcxproj -> C:\Users\lipss\source\repos\MorseSimulator\Debug\MorseSimulator.exe
