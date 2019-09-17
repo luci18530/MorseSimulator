@@ -112,7 +112,17 @@ inicio:
 		marcador:
 			system("cls");
 			printf("Digite o codigo (para voltar escreva SAIR): ");
+			getchar();
 			fgets(codigoescrito, TAMFRASE, stdin);
+			int lol = 1;
+			while (lol <= TAMFRASE)
+			{
+				if (codigoescrito[lol] == '\n')
+				{
+					codigoescrito[lol] = '\0';
+				}
+				lol++;
+			}
 			if (codigoescrito[0] == 'S' && codigoescrito[1] == 'A' && codigoescrito[2] == 'I' && codigoescrito[3] == 'R') { break; }
 			else {
 				parsemorse(codigoescrito);

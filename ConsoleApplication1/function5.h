@@ -10,7 +10,7 @@
 
 
 char* convert(char *mword);
-char* parsemorse(char *phrase);
+void parsemorse(char phrase[]);
 
 
 #endif

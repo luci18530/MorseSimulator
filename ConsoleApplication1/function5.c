@@ -1,3 +1,5 @@
+#define _CRT_SECURE_NO_WARNINGS
+
 #include <stdio.h>
 #include <windows.h>
 #include <dos.h>
@@ -10,7 +12,7 @@
 
 char* convert(char *mword)
 {
-	int b = 0, count3 = 0;
+	int  count3 = 0;
 	char *stringnormal[] = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M","N", "O", "P", "Q", "R", "S", "T", "U",
 					  "V", "W", "X", "Y", "Z", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "&", "'", "@",")","(",":",",",
 					  "=", "!", "." ,"-", "?", " " };
@@ -20,9 +22,9 @@ char* convert(char *mword)
 						 ".-.","...","-","..-", "...-",".--","-..-","-.--","--..", ".----","..---","...--","....-", ".....", "-....",
 							 "--...","---..","----.","-----", ".-...", ".----.", ".--.-.", "-.--.", "---...","--..--", "-...-", "-.-.--", ".-.-.-", "-....-", "..--..", "/" };
 
-	while (b == 0)
+	while (TRUE)
 	{
-		if (strcmp(mword, stringmorse[count3]) != 0)
+		if (strcmp(mword,stringmorse[count3]) != 0)
 		{
 			count3++;
 		}
@@ -34,23 +36,21 @@ char* convert(char *mword)
 	}
 }
 
-char* parsemorse(char *phrase)
+void parsemorse(char phrase[])
 {
-	char words[9999964], ch, v = '0', real[9999964];
+	char words[9964],v = '0', real[9964], ch[2];
 	int count1 = 0, count2 = 0, i = 0, count4 = 0;
 	while (v != '\0' && v != EOF)
 	{
-		while (ch != ' ' && ch != '/' && ch != '|')
+		while (ch[0] != '/' && ch[0] != ' ' && ch[0] != '\0')
 		{
 			words[i] = phrase[count2];
+			ch[0] = phrase[count2];
 			count2++;
 			i++;
-			ch = words[i];
 		}
-		words[i] = '\0';
-		real[count1] = convert(words);
 		v = phrase[count2];
-		printf(real[count1]);
+		printf("%s", convert(words));
 		count1++;
 	}
 }
