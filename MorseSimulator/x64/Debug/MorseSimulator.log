@@ -1,1 +1,4 @@
-﻿  MorseSimulator.vcxproj -> C:\Users\lipss\Source\Repos\MorseSimulator\x64\Debug\MorseSimulator.exe
+﻿  morse.c
+C:\Users\lipss\source\repos\MorseSimulator\MorseSimulator\morse.c(44,26): warning C4047:  '==': 'int' difere em níveis de indireção de 'char [4]'
+C:\Users\lipss\source\repos\MorseSimulator\MorseSimulator\morse.c(121,15): warning C4013:  'parsemorse' indefinido; assumindo extern retornando int
+  MorseSimulator.vcxproj -> C:\Users\lipss\Source\Repos\MorseSimulator\x64\Debug\MorseSimulator.exe

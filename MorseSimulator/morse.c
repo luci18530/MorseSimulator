@@ -24,7 +24,7 @@ int main(void) {
 	int leitor = 0; // leitor da frase/codigo
 inicio:
 	system("cls");
-	printf("SISTEMA TELEGRAFO Versão Alpha 0.7.1\n-----------------------------------------\n");
+	printf("SISTEMA TELEGRAFO Versão Beta 0.9.9\n-----------------------------------------\n");
 	printf("Digite o modo de como você quer trabalhar\n(1)- Caractere para codigo sonoro\n(2)- Caractere para codigo escrito\n(3)- String para codigo sonoro\n(4)- String para codigo escrito\n(5)- Codigo para string\n(6)- Sair\n-----------------------------------------\n");
 	printf("Digite a opção: "); // SELECIONAR A OPÇÃO
 	scanf("%i", &opc);
@@ -57,7 +57,7 @@ inicio:
 
 		while (1) {
 			system("cls");
-			printf("Digite os textos (pressione 000 para sair): ");
+			printf("Digite os textos (digite 000 para sair): ");
 			fgets(frase, TAMFRASE, stdin);
 			if (frase[0] == '0' && frase[1] == '0' && frase[2] == '0') { goto inicio; }
 			else {
@@ -106,10 +106,9 @@ inicio:
 	}
 
 	if (opc == 5) {
-		// OPÇÃO 5 - CODIGO ESCRITO PARA STRING - NÃO SEI COMO FAÇO ISSO!!!!!!!!!!!
+		// OPÇÃO 5 - CODIGO ESCRITO PARA STRING
 		getchar();
 		while (1) {
-		marcador:
 			system("cls");
 			printf("Digite o codigo (para voltar escreva SAIR): ");
 			fgets(codigoescrito, TAMFRASE, stdin);
@@ -122,7 +121,7 @@ inicio:
 				}
 				lol++;
 			}
-			if (codigoescrito[0] == 'S' && codigoescrito[1] == 'A' && codigoescrito[2] == 'I' && codigoescrito[3] == 'R') { break; }
+			if (codigoescrito[0] == 'S' && codigoescrito[1] == 'A' && codigoescrito[2] == 'I' && codigoescrito[3] == 'R') { goto inicio; }
 			else {
 				parsemorse(codigoescrito);
 			}
@@ -145,12 +144,12 @@ inicio:
 	/* FALTA:
 		USO DO CLEAR SCREEN - ok
 		FALAR COM MARITAN
-		DESENVOLVER A OPÇÃO 2 - ok ,3 - ok,5
+		DESENVOLVER A OPÇÃO 2 - ok ,3 - ok,5 - ok
 		APLICAR O DELAY ENTRE CARACTERES E FRASES - OK
 		INCLUIR OS CARACTERES DE PONTUAÇÃO NA FUNÇÃO CODIGO - ok
 		VER SE É POSSIVEL POR O CODIGO ESCRTIO NA FUNÇÃO CODIGO CASO A OPÇÃO SELECIONADA SEJA 2 OU 4 - ok
 	 */
 
-	 /* https://morsecode.scphillips.com/morse2.html*/
+	 /* https://morsecode.scphillips.com/morse2.html */
 
 }

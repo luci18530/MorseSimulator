@@ -42,7 +42,7 @@ char* convert(char* mword)
 
 void parsemorse(char phrase[])
 {
-	char words[TAMFRASE], v = '0', real[TAMFRASE];
+	char words[TAMFRASE], v = '0';
 	int count1 = 0, count2 = 0, i = 0, count4 = 0;
 	while (phrase[count2] != '\0' && phrase[count2] != EOF)
 	{

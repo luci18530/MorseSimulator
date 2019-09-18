@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\lipss\source\repos\MorseSimulator\MorseSimulator\</FILEPATH>
+      <FILENAME>morse.c</FILENAME>
+      <LINE>16</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>6262</DEFECTCODE>
+    <DESCRIPTION>A função usa "32788" bytes de pilha:  excede /analyze:stacksize "16384". Considere mover alguns dados para o heap.</DESCRIPTION>
+    <FUNCTION>main</FUNCTION>
+    <DECORATED>main</DECORATED>
+    <FUNCLINE>16</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\lipss\source\repos\MorseSimulator\MorseSimulator\</FILEPATH>
+      <FILENAME>morse.c</FILENAME>
+      <LINE>30</LINE>
+      <COLUMN>6</COLUMN>
+    </SFA>
+    <DEFECTCODE>6031</DEFECTCODE>
+    <DESCRIPTION>Valor de retorno ignorado: "scanf".</DESCRIPTION>
+    <FUNCTION>main</FUNCTION>
+    <DECORATED>main</DECORATED>
+    <FUNCLINE>16</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\lipss\source\repos\MorseSimulator\MorseSimulator\</FILEPATH>
+      <FILENAME>morse.c</FILENAME>
+      <LINE>35</LINE>
+      <COLUMN>7</COLUMN>
+    </SFA>
+    <DEFECTCODE>6031</DEFECTCODE>
+    <DESCRIPTION>Valor de retorno ignorado: "scanf".</DESCRIPTION>
+    <FUNCTION>main</FUNCTION>
+    <DECORATED>main</DECORATED>
+    <FUNCLINE>16</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\lipss\source\repos\MorseSimulator\MorseSimulator\</FILEPATH>
+      <FILENAME>morse.c</FILENAME>
+      <LINE>43</LINE>
+      <COLUMN>8</COLUMN>
+    </SFA>
+    <DEFECTCODE>6031</DEFECTCODE>
+    <DESCRIPTION>Valor de retorno ignorado: "scanf".</DESCRIPTION>
+    <FUNCTION>main</FUNCTION>
+    <DECORATED>main</DECORATED>
+    <FUNCLINE>16</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\lipss\source\repos\MorseSimulator\MorseSimulator\</FILEPATH>
+      <FILENAME>morse.c</FILENAME>
+      <LINE>77</LINE>
+      <COLUMN>8</COLUMN>
+    </SFA>
+    <DEFECTCODE>6031</DEFECTCODE>
+    <DESCRIPTION>Valor de retorno ignorado: "scanf".</DESCRIPTION>
+    <FUNCTION>main</FUNCTION>
+    <DECORATED>main</DECORATED>
+    <FUNCLINE>16</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\lipss\source\repos\MorseSimulator\MorseSimulator\</FILEPATH>
+      <FILENAME>morse.c</FILENAME>
+      <LINE>110</LINE>
+      <COLUMN>9</COLUMN>
+    </SFA>
+    <DEFECTCODE>6031</DEFECTCODE>
+    <DESCRIPTION>Valor de retorno ignorado: "getchar".</DESCRIPTION>
+    <FUNCTION>main</FUNCTION>
+    <DECORATED>main</DECORATED>
+    <FUNCLINE>16</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>
