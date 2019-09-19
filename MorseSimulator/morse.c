@@ -89,6 +89,7 @@ inicio:
 
 	if (opc == 4) {
 		// OPÇÃO 4 - STRING PARA CODIGO ESCRITO
+		getchar();
 		while (1) {
 			system("cls");
 			printf("Digite o texto (pressione 000 para sair): ");
