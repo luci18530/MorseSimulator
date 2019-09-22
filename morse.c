@@ -138,6 +138,7 @@ inicio:
         printf("-----------------------------------\n");
         printf("(1) - História do Codigo Morse\n");
         printf("(2) - Funcionamento do Codigo Morse\n");
+        printf("(3) - Tabela do código\n");
         printf("-----------------------------------\n");
         printf("Digite outro numero para voltar\n");
         printf("-----------------------------------\n");
@@ -145,19 +146,60 @@ inicio:
         scanf("%i", &opc6);
             if (opc6 == 1){
                 system("cls");
-                printf("Historia...");
+                printf("Desenvolvido em 1835, pelo pintor e inventor Samuel Finley Breese Morse, o Código Morse é um sistema binário de representação à distância de números, letras e sinais gráficos, utilizando-se de sons curtos e longos, além de pontos e traços para transmitir mensagens.\nEsse sistema é composto por todas as letras do alfabeto e todos os números. Os caracteres são representados por uma combinação específica de pontos e traços, para formar as palavras, basta realizar a combinação correta de símbolos. As mensagens são transmitidas por meio e intervalos de som (apito) ou luz (lanterna), podendo ser captadas por diversos aparelhos, como, por exemplo, o radiotelégrafo e o telégrafo.\nDurante a Segunda Guerra Mundial, o Código Morse foi fundamental no envio de mensagens rápidas de longa distância entre navios e aviões dos exércitos. O código foi usado até 1999 como linguagem oficial para operações marítimas, quando então foi substituído pelo sistema GMDSS de comunicação. O exército americano também treinava soldados em Código Morse até 2015. Ao se popularizar, o código foi adaptado para que cada letra e cada algarismo tivesse sua representação. Ao fazer a marca, a agulha fazia um barulho e logo os operadores aprenderam a decifrar o Código Morse, nem mesmo precisando ver o resultado das fitas marcadas. Só de ouvir os barulhos (curto, longo ou silêncio), eles já conseguiam dizer a mensagem passada.\nCom a invenção do telefone, no fim do século XIX, o Código Morse caiu em desuso. O desenvolvimento de novas tecnologias de comunicação mais eficazes desencadeou a substituição desse sistema por outros aparelhos. Na França, por exemplo, o Código Morse deixou de ser utilizado pelas grandes navegações desde 1997.\n");
                 system("pause");
                 goto op6;
             }
 
             else if (opc6 == 2){
                 system("cls");
-                printf("O código Morse internacional é composto de seis elementos:\n");
-                printf("* Sinal curto, ponto ou 'dit' (·)\n* Sinal longo, traço ou 'dah' (-)\n* Intervalo entre caracteres (entre pontos e traços)\n* Intervalo curto (entre letras)\n* Intervalo médio (entre palavras)\n* Intervalo longo (entre frases)");
+                printf("BEM VINDO USUÁRIO !\n");
+                printf("-------------------\n");
+                printf("O código Morse internacional é composto de seis elementos:\n\n");
+                printf("* Sinal curto, ponto ou 'dit' (·)\n* Sinal longo, traço ou 'dah' (-)\n* Intervalo entre caracteres (entre pontos e traços)\n* Intervalo curto (entre letras)\n* Intervalo médio (entre palavras)\n* Intervalo longo (entre frases)\n");
+                printf("-------------------\n");
+				printf("Os dois primeiros elementos são usados para representar caracteres.\nA duração do dit, predefinida nesse programa, determina o ritmo a qual a mensagem é enviada.\nAqui está uma ilustração de convenções de ritmo. Sua intenção é mostrar exatamente o ritmo\nNormalmente seria escrito algo como isso:\n\n");
+				printf("-.-. --- -.. .. --. ---  /       -- --- .-. ... .\n");
+				printf("C    O   D   I  G   O  (espaço)   M  O   R   S  E\n");
+				printf("-------------------\n");
+				printf("Duração dos Elementos do Morse\n\n");
+				printf("* Um dah é convencionalmente 3 vezes a duração do dit\n");
+				printf("* Espaços entre dits e dahs em um caractere têm a duração de um dit.\n");
+				printf("* Espaços entre letras em uma palavra têm a duração de um dah (3 dits).\n");
+				printf("* Espaços entre palavras têm a duração de 7 dits.\n");
                 system("pause");
                 goto op6;
             }
-
+			else if(opc6 == 3){
+				system("cls");
+				printf("TABELA DO CODIGO\n");
+                printf("----------------\n");
+                printf("CHAR\tCODIGO\n----------------\nA\t.-\tN\t-.\n");
+				printf("B\t-...\tO\t---\n");
+				printf("C\t-.-.\tP\t.--.\n");
+				printf("D\t-..\tQ\t--.-\n");
+				printf("E\t.\tR\t.-.\n");
+				printf("F\t..-.\tS\t...\n");
+				printf("G\t--.\tT\t-\n");
+				printf("H\t....\tU\t..-\n");
+				printf("I\t..\tV\t...-\n");
+				printf("J\t.---\tW\t.--\n");
+				printf("K\t-.-\tX\t-..-\n");
+				printf("L\t.-..\tY\t-.--\n");
+				printf("M\t--\tZ\t--..\n\n");
+				printf("0\t-----\t&\t.-...\t-\t-....-\n");
+				printf("1\t.----\t'\t.----.\t?\t..--..\n");
+				printf("2\t..---\t@\t.--.-.\n");
+				printf("3\t...--\t)\t-.--.-\n");
+				printf("4\t....-\t(\t-.--.\n");
+				printf("5\t.....\t:\t---...\n");
+				printf("6\t-....\t,\t--..--\n");
+				printf("7\t--...\t=\t-...-\n");
+				printf("8\t---..\t!\t-.-.--\n");
+				printf("9\t----.\t.\t.-.-.-\n");
+				system("pause");
+				goto op6;
+			}
             else {
                 goto inicio;
             }
