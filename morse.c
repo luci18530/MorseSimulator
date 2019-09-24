@@ -11,38 +11,38 @@
 #include "function5.h"
 
 int FREQ; //FREQUENCIA DO BEEP
-int opc; // SELETOR DA OP«√O GERAL
-int opc6; // SELETOR DA OP«√O 6
+int opc; // SELETOR DA OP√á√ÉO GERAL
+int opc6; // SELETOR DA OP√á√ÉO 6
 
 int main(void) {
 	setlocale(LC_ALL, "Portuguese"); // PERMITIR CARACTERES ACENTUADOS
 
-	int cont_limite_opc1 = 0; // CONTADOR PARA SAIR DA OP«√O 1
-	int cont_limite_opc2 = 0; // CONTADOR PARA SAIR DA OP«√O 2 
-	char caractere; // PARA A OP«√O 1
-	char frase[TAMFRASE]; // PARA A OP«√O 3
-	char codigoescrito[TAMFRASE]; // PARA A OP«√O 5
+	int cont_limite_opc1 = 0; // CONTADOR PARA SAIR DA OP√á√ÉO 1
+	int cont_limite_opc2 = 0; // CONTADOR PARA SAIR DA OP√á√ÉO 2 
+	char caractere; // PARA A OP√á√ÉO 1
+	char frase[TAMFRASE]; // PARA A OP√á√ÉO 3
+	char codigoescrito[TAMFRASE]; // PARA A OP√á√ÉO 5
 	int leitor = 0; // leitor da frase/codigo
 inicio:
 	system("cls");
-	printf("SISTEMA TELEGRAFO VERS√O 1.0\n-----------------------------------------\n");
-	printf("Digite o modo de como vocÍ quer trabalhar\n(1) - Caractere para codigo sonoro\n(2) - Caractere para codigo escrito\n(3) - String para codigo sonoro\n(4) - String para codigo escrito\n(5) - Codigo para string\n(6) - Sobre\n(7) - Sair\n-----------------------------------------\n");
-	printf("Digite a opÁ„o: "); // SELECIONAR A OP«√O
+	printf("SISTEMA TELEGRAFO VERS√ÉO 1.0\n-----------------------------------------\n");
+	printf("Digite o modo de como voc√™ quer trabalhar\n(1) - Caractere para codigo sonoro\n(2) - Caractere para codigo escrito\n(3) - String para codigo sonoro\n(4) - String para codigo escrito\n(5) - Codigo para string\n(6) - Sobre\n(7) - Sair\n-----------------------------------------\n");
+	printf("Digite a op√ß√£o: "); // SELECIONAR A OP√á√ÉO
 	scanf("%i", &opc);
 	printf("-----------------------------------------\n");
 
 	if (opc == 1 || opc == 3) {
-		printf("Determine a frequÍncia da onda do beep em Hertz: "); // SELECIONAR A FREQUENCIA 
+		printf("Determine a frequ√™ncia da onda do beep em Hertz: "); // SELECIONAR A FREQUENCIA 
 		scanf("%i", &FREQ);
 		printf("-----------------------------------------\n");
 	}
 	if (opc == 1) {
-		// OP«√O 1 - CARACTERE PARA CODIGO SONORO
+		// OP√á√ÉO 1 - CARACTERE PARA CODIGO SONORO
 		while (1) {
 			system("cls");
-			printf("Digite a caractere (pressione 0 trÍs vezes para sair): ");
+			printf("Digite a caractere (pressione 0 tr√™s vezes para sair): ");
 			scanf(" %c", &caractere);
-			if (caractere == '0') { cont_limite_opc1++; } // CONTADOR PARA SAIR DA OP«√O 1
+			if (caractere == '0') { cont_limite_opc1++; } // CONTADOR PARA SAIR DA OP√á√ÉO 1
 			
 			if (cont_limite_opc1 >= 3) {
 				cont_limite_opc1 = 0;
@@ -54,7 +54,7 @@ inicio:
 
 
 	if (opc == 3) {
-		// OP«√O 3 - STRING PARA CODIGO SONORO
+		// OP√á√ÉO 3 - STRING PARA CODIGO SONORO
 
 		while (1) {
 			system("cls");
@@ -63,7 +63,7 @@ inicio:
 			if (frase[0] == '0' && frase[1] == '0' && frase[2] == '0') { goto inicio; }
 			else {
 				for (leitor = 0; frase[leitor] != '\0'; leitor++) {
-					codigo(frase[leitor]); // A CADA CARACTERE DA STRING SERA USADO A FUN«√O QUE GERA OS BEEPS AT… ENCONTRAR O '\0'
+					codigo(frase[leitor]); // A CADA CARACTERE DA STRING SERA USADO A FUN√á√ÉO QUE GERA OS BEEPS AT√â ENCONTRAR O '\0'
 				}
 			}
 		}
@@ -71,12 +71,12 @@ inicio:
 
 
 	if (opc == 2) {
-		// OP«√O 2 - CARACTERE PARA CODIGO ESCRITO
+		// OP√á√ÉO 2 - CARACTERE PARA CODIGO ESCRITO
 		while (1) {
 			system("cls");
-			printf("Digite o caractere (pressione 0 trÍs vezes para sair): ");
+			printf("Digite o caractere (pressione 0 tr√™s vezes para sair): ");
 			scanf(" %c", &caractere);
-			if (caractere == '0') { cont_limite_opc2++; } // CONTADOR PARA SAIR DA OP«√O 2
+			if (caractere == '0') { cont_limite_opc2++; } // CONTADOR PARA SAIR DA OP√á√ÉO 2
 			if (cont_limite_opc2 >= 3) {
 				cont_limite_opc2 = 0;
 				goto inicio;
@@ -90,7 +90,7 @@ inicio:
 	}
 
 	if (opc == 4) {
-		// OP«√O 4 - STRING PARA CODIGO ESCRITO
+		// OP√á√ÉO 4 - STRING PARA CODIGO ESCRITO
 		getchar();
 		while (1) {
 			system("cls");
@@ -101,7 +101,7 @@ inicio:
 			else {
 				printf("\nResultado: ");
 				for (leitor = 0; frase[leitor] != '\0'; leitor++) {
-					codigo(frase[leitor]); // A CADA CARACTERE DA STRING SERA USADO A FUN«√O QUE GERA OS PONTOS E TRA«OS AT… ENCONTRAR O '\0'
+					codigo(frase[leitor]); // A CADA CARACTERE DA STRING SERA USADO A FUN√á√ÉO QUE GERA OS PONTOS E TRA√áOS AT√â ENCONTRAR O '\0'
 				}
 				printf("\n\n");
 				system("pause");
@@ -110,14 +110,14 @@ inicio:
 	}
 
 	if (opc == 5) {
-		// OP«√O 5 - CODIGO ESCRITO PARA STRING
-		getchar();
+		// OP√á√ÉO 5 - CODIGO ESCRITO PARA STRING
+		getchar(); //iso captura o '\n' que o scanf deixou no buffer na escolha de op√ß√£o
 		while (1) {
 			system("cls");
 			printf("Digite o codigo (para voltar escreva SAIR): ");
-			fgets(codigoescrito, TAMFRASE, stdin);
-			int lol = 1;
-			while (lol <= TAMFRASE)
+			fgets(codigoescrito, TAMFRASE, stdin); //Captura o codigo escrito pelo usu√°rio
+			int lol = 1; // contador para o pr√≥ximo while
+			while (lol <= TAMFRASE) // isso retira o '\n' que o fgets deixa no final
 			{
 				if (codigoescrito[lol] == '\n')
 				{
@@ -125,11 +125,11 @@ inicio:
 				}
 				lol++;
 			}
-			if (codigoescrito[0] == 'S' && codigoescrito[1] == 'A' && codigoescrito[2] == 'I' && codigoescrito[3] == 'R') { goto inicio; }
+			if (codigoescrito[0] == 'S' && codigoescrito[1] == 'A' && codigoescrito[2] == 'I' && codigoescrito[3] == 'R') { goto inicio; } //a op√ß√£o sair
 			
 			else {
 				printf("\nResultado: ");
-				parsemorse(codigoescrito);
+				parsemorse(codigoescrito); //chamada da fun√ß√£o tradutora no function5.c
 				printf("\n");
 			}
 			system("pause");
@@ -141,37 +141,37 @@ inicio:
         system("cls");
         
         printf("-----------------------------------\n");
-        printf("(1) - HistÛria do Codigo Morse\n");
+        printf("(1) - Hist√≥ria do Codigo Morse\n");
         printf("(2) - Funcionamento do Codigo Morse\n");
-        printf("(3) - Tabela do cÛdigo\n");
+        printf("(3) - Tabela do c√≥digo\n");
         printf("-----------------------------------\n");
         printf("Digite outro numero para voltar\n");
         printf("-----------------------------------\n");
-        printf("Digite a opÁ„o: ");
+        printf("Digite a op√ß√£o: ");
         scanf("%i", &opc6);
             if (opc6 == 1){
                 system("cls");
-                printf("\tDesenvolvido em 1835, pelo pintor e inventor Samuel Finley Breese Morse, o CÛdigo Morse È um sistema bin·rio de representaÁ„o ‡ dist‚ncia de n˙meros, letras e sinais gr·ficos, utilizando-se de sons curtos e longos, alÈm de pontos e traÁos para transmitir mensagens.\n\n\tEsse sistema È composto por todas as letras do alfabeto e todos os n˙meros. Os caracteres s„o representados por uma combinaÁ„o especÌfica de pontos e traÁos, para formar as palavras, basta realizar a combinaÁ„o correta de sÌmbolos. As mensagens s„o transmitidas por meio e intervalos de som (apito) ou luz (lanterna), podendo ser captadas por diversos aparelhos, como, por exemplo, o radiotelÈgrafo e o telÈgrafo.\n\n\tDurante a Segunda Guerra Mundial, o CÛdigo Morse foi fundamental no envio de mensagens r·pidas de longa dist‚ncia entre navios e aviıes dos exÈrcitos.\n\n\tO cÛdigo foi usado atÈ 1999 como linguagem oficial para operaÁıes marÌtimas, quando ent„o foi substituÌdo pelo sistema GMDSS de comunicaÁ„o. O exÈrcito americano tambÈm treinava soldados em CÛdigo Morse atÈ 2015.\n\n\tAo se popularizar, o cÛdigo foi adaptado para que cada letra e cada algarismo tivesse sua representaÁ„o. Ao fazer a marca, a agulha fazia um barulho e logo os operadores aprenderam a decifrar o CÛdigo Morse, nem mesmo precisando ver o resultado das fitas marcadas. SÛ de ouvir os barulhos (curto, longo ou silÍncio), eles j· conseguiam dizer a mensagem passada.\n\n\tCom a invenÁ„o do telefone, no fim do sÈculo XIX, o CÛdigo Morse caiu em desuso. O desenvolvimento de novas tecnologias de comunicaÁ„o mais eficazes desencadeou a substituiÁ„o desse sistema por outros aparelhos. Na FranÁa, por exemplo, o CÛdigo Morse deixou de ser utilizado pelas grandes navegaÁıes desde 1997.\n\n");
+                printf("\tDesenvolvido em 1835, pelo pintor e inventor Samuel Finley Breese Morse, o C√≥digo Morse √© um sistema bin√°rio de representa√ß√£o √† dist√¢ncia de n√∫meros, letras e sinais gr√°ficos, utilizando-se de sons curtos e longos, al√©m de pontos e tra√ßos para transmitir mensagens.\n\n\tEsse sistema √© composto por todas as letras do alfabeto e todos os n√∫meros. Os caracteres s√£o representados por uma combina√ß√£o espec√≠fica de pontos e tra√ßos, para formar as palavras, basta realizar a combina√ß√£o correta de s√≠mbolos. As mensagens s√£o transmitidas por meio e intervalos de som (apito) ou luz (lanterna), podendo ser captadas por diversos aparelhos, como, por exemplo, o radiotel√©grafo e o tel√©grafo.\n\n\tDurante a Segunda Guerra Mundial, o C√≥digo Morse foi fundamental no envio de mensagens r√°pidas de longa dist√¢ncia entre navios e avi√µes dos ex√©rcitos.\n\n\tO c√≥digo foi usado at√© 1999 como linguagem oficial para opera√ß√µes mar√≠timas, quando ent√£o foi substitu√≠do pelo sistema GMDSS de comunica√ß√£o. O ex√©rcito americano tamb√©m treinava soldados em C√≥digo Morse at√© 2015.\n\n\tAo se popularizar, o c√≥digo foi adaptado para que cada letra e cada algarismo tivesse sua representa√ß√£o. Ao fazer a marca, a agulha fazia um barulho e logo os operadores aprenderam a decifrar o C√≥digo Morse, nem mesmo precisando ver o resultado das fitas marcadas. S√≥ de ouvir os barulhos (curto, longo ou sil√™ncio), eles j√° conseguiam dizer a mensagem passada.\n\n\tCom a inven√ß√£o do telefone, no fim do s√©culo XIX, o C√≥digo Morse caiu em desuso. O desenvolvimento de novas tecnologias de comunica√ß√£o mais eficazes desencadeou a substitui√ß√£o desse sistema por outros aparelhos. Na Fran√ßa, por exemplo, o C√≥digo Morse deixou de ser utilizado pelas grandes navega√ß√µes desde 1997.\n\n");
                 system("pause");
                 goto op6;
             }
 
             else if (opc6 == 2){
                 system("cls");
-                printf("BEM VINDO USU¡RIO !\n");
+                printf("BEM VINDO USU√ÅRIO !\n");
                 printf("-------------------\n");
-                printf("O cÛdigo Morse internacional È composto de seis elementos:\n\n");
-                printf("* Sinal curto, ponto ou 'dit' (∑)\n* Sinal longo, traÁo ou 'dah' (-)\n* Intervalo entre caracteres (entre pontos e traÁos)\n* Intervalo curto (entre letras)\n* Intervalo mÈdio (entre palavras)\n* Intervalo longo (entre frases)\n");
+                printf("O c√≥digo Morse internacional √© composto de seis elementos:\n\n");
+                printf("* Sinal curto, ponto ou 'dit' (¬∑)\n* Sinal longo, tra√ßo ou 'dah' (-)\n* Intervalo entre caracteres (entre pontos e tra√ßos)\n* Intervalo curto (entre letras)\n* Intervalo m√©dio (entre palavras)\n* Intervalo longo (entre frases)\n");
                 printf("-------------------\n");
-				printf("Os dois primeiros elementos s„o usados para representar caracteres.\nA duraÁ„o do dit, predefinida nesse programa, determina o ritmo a qual a mensagem È enviada.\nAqui est· uma ilustraÁ„o de convenÁıes de ritmo. Sua intenÁ„o È mostrar exatamente o ritmo\nNormalmente seria escrito algo como isso:\n\n");
+				printf("Os dois primeiros elementos s√£o usados para representar caracteres.\nA dura√ß√£o do dit, predefinida nesse programa, determina o ritmo a qual a mensagem √© enviada.\nAqui est√° uma ilustra√ß√£o de conven√ß√µes de ritmo. Sua inten√ß√£o √© mostrar exatamente o ritmo\nNormalmente seria escrito algo como isso:\n\n");
 				printf("-.-. --- -.. .. --. ---  /       -- --- .-. ... .\n");
-				printf("C    O   D   I  G   O  (espaÁo)   M  O   R   S  E\n");
+				printf("C    O   D   I  G   O  (espa√ßo)   M  O   R   S  E\n");
 				printf("-------------------\n");
-				printf("DuraÁ„o dos Elementos do Morse\n\n");
-				printf("* Um dah È convencionalmente 3 vezes a duraÁ„o do dit\n");
-				printf("* EspaÁos entre dits e dahs em um caractere tÍm a duraÁ„o de um dit.\n");
-				printf("* EspaÁos entre letras em uma palavra tÍm a duraÁ„o de um dah (3 dits).\n");
-				printf("* EspaÁos entre palavras tÍm a duraÁ„o de 7 dits.\n\n");
+				printf("Dura√ß√£o dos Elementos do Morse\n\n");
+				printf("* Um dah √© convencionalmente 3 vezes a dura√ß√£o do dit\n");
+				printf("* Espa√ßos entre dits e dahs em um caractere t√™m a dura√ß√£o de um dit.\n");
+				printf("* Espa√ßos entre letras em uma palavra t√™m a dura√ß√£o de um dah (3 dits).\n");
+				printf("* Espa√ßos entre palavras t√™m a dura√ß√£o de 7 dits.\n\n");
                 system("pause");
                 goto op6;
             }
@@ -215,14 +215,14 @@ inicio:
 		system("cls");
 		printf("OBRIGADO POR USAR NOSSO PROGRAMA!\n");
 		printf("-----------------------------------------\n");
-		printf("Feito por:\n1- Luciano Pereira de Oliveira Filho\n2- Lucas Isaac Pissaia da Silva \n3- Erika Fernanda Andrade Bezerra\n4- Anthony Gabriel Lopes da Silva\n5- Samuel Torres LourenÁo\n\nTURINHO - CIENCIA DA COMPUTA«√O 2019.1\n");
+		printf("Feito por:\n1- Luciano Pereira de Oliveira Filho\n2- Lucas Isaac Pissaia da Silva \n3- Erika Fernanda Andrade Bezerra\n4- Anthony Gabriel Lopes da Silva\n5- Samuel Torres Louren√ßo\n\nTURINHO - CIENCIA DA COMPUTA√á√ÉO 2019.1\n");
 		printf("-----------------------------------------\n");
 		system("pause");
 		return 0;
 	}
 	
 	else {
-		printf("OpÁ„o Invalida, digite novamente\n");
+		printf("Op√ß√£o Invalida, digite novamente\n");
 		system("pause");
 		goto inicio;
 	}
