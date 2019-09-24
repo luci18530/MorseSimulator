@@ -108,13 +108,13 @@ inicio:
 
 	if (opc == 5) {
 		// OPÇÃO 5 - CODIGO ESCRITO PARA STRING
-		getchar();
+		getchar(); //iso captura o '\n' que o scanf deixou no buffer na escolha de opção
 		while (1) {
 			system("cls");
 			printf("Digite o codigo (para voltar escreva SAIR): ");
-			fgets(codigoescrito, TAMFRASE, stdin);
-			int lol = 1;
-			while (lol <= TAMFRASE)
+			fgets(codigoescrito, TAMFRASE, stdin); //Captura o codigo escrito pelo usuário
+			int lol = 1; // contador para o próximo while
+			while (lol <= TAMFRASE) // isso retira o '\n' que o fgets deixa no final
 			{
 				if (codigoescrito[lol] == '\n')
 				{
@@ -122,9 +122,9 @@ inicio:
 				}
 				lol++;
 			}
-			if (codigoescrito[0] == 'S' && codigoescrito[1] == 'A' && codigoescrito[2] == 'I' && codigoescrito[3] == 'R') { goto inicio; }
+			if (codigoescrito[0] == 'S' && codigoescrito[1] == 'A' && codigoescrito[2] == 'I' && codigoescrito[3] == 'R') { goto inicio; } //a opção sair
 			else {
-				parsemorse(codigoescrito);
+				parsemorse(codigoescrito); //chamada da função tradutora no function5.c
 			}
 			system("pause");
 		}
