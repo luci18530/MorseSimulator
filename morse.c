@@ -82,8 +82,9 @@ inicio:
 				goto inicio;
 
 			}
+			printf("\nResultado: ");
 			codigo(caractere);
-			printf("\n");
+			printf("\n\n");
 			system("pause");
 		}
 	}
@@ -98,10 +99,11 @@ inicio:
 			if (frase[0] == '0' && frase[1] == '0' && frase[2] == '0') { goto inicio; }
 
 			else {
+				printf("\nResultado: ");
 				for (leitor = 0; frase[leitor] != '\0'; leitor++) {
 					codigo(frase[leitor]); // A CADA CARACTERE DA STRING SERA USADO A FUNÇÃO QUE GERA OS PONTOS E TRAÇOS ATÉ ENCONTRAR O '\0'
 				}
-				printf("\n");
+				printf("\n\n");
 				system("pause");
 			}
 		}
@@ -124,8 +126,11 @@ inicio:
 				lol++;
 			}
 			if (codigoescrito[0] == 'S' && codigoescrito[1] == 'A' && codigoescrito[2] == 'I' && codigoescrito[3] == 'R') { goto inicio; }
+			
 			else {
+				printf("\nResultado: ");
 				parsemorse(codigoescrito);
+				printf("\n");
 			}
 			system("pause");
 		}
@@ -166,7 +171,7 @@ inicio:
 				printf("* Um dah é convencionalmente 3 vezes a duração do dit\n");
 				printf("* Espaços entre dits e dahs em um caractere têm a duração de um dit.\n");
 				printf("* Espaços entre letras em uma palavra têm a duração de um dah (3 dits).\n");
-				printf("* Espaços entre palavras têm a duração de 7 dits.\n");
+				printf("* Espaços entre palavras têm a duração de 7 dits.\n\n");
                 system("pause");
                 goto op6;
             }
